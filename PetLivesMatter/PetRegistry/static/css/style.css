@@ -1,6 +1,20 @@
-/* h1 {
-  color: blue;
+/* css styling */
+
+/* Base Styling */
+/* Header */
+
+/* .header-image {
+
+}
+
+
+h1 {
   text-align: center;
+}
+
+#header-title {
+  text-align: center;
+  font-size: 36;
 } */
 
 /*
@@ -1298,8 +1312,6 @@ body.wide {
 }
 #site-title {
 	padding-bottom: 0;
-  text-align: center;
-  float: right;
 }
 #site-title a {
 	color: #666666;
