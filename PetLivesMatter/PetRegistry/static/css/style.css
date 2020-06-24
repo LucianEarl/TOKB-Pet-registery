@@ -1279,11 +1279,13 @@ body.wide {
 #hero-image-over {
 	position: relative;
   float: left;
+	display: none;
 }
 #header-banner-image{
 	float: left;
 	padding: 5px 20px 5px 0;
 	max-width: 100%;
+	z-index: 2;
 }
 /* #header-banner-image img {
 	margin-bottom: 0px;
@@ -1299,12 +1301,14 @@ body.wide {
 	z-index: 1;
 } */
 #Header-logo-image img{
+	top: 45px;
 	margin-bottom: 0px;
 	max-height: 60px;
 	height: auto;
 	width: auto;
 	position: absolute;
 	z-index: 1;
+
 }
 
 #header-text {
@@ -1707,6 +1711,20 @@ li.comment {
 /*
 ====> 13.8 Footer
 --------------------------------------------------------------*/
+/* Contact Us ID */
+
+#contact-us-id {
+		text-align: center;
+
+}
+
+#contact-us-id a{
+	font-size: 18 !important;
+	padding-right: 400px;
+
+}
+
+
 
 /*
 ====> ====> 13.8.a Footer General CSS
@@ -1809,7 +1827,7 @@ li.comment {
 ====> ====> 13.8.d Footer Menu
 --------------------------------------------------------------*/
 .footer-nav {
-	float: right;
+	float: left;
 }
 .footer-nav ul li {
 	display: inline-block;
@@ -1821,6 +1839,7 @@ li.comment {
 #colophon .footer-nav ul li a:hover {
 	color: #80abc8;
 }
+
 
 /*
 ====> ====> 13.8.e Scroll to Top

@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8">
     <title>Home | Pet Lives Matter</title>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% load static %}
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all">
 
@@ -12,11 +15,11 @@
   <div class="header">
     <div class="main-head-wrap inner-wrap clearfix">
       <div id="hero-image-div">
+        <div id="header-logo-image">
+          <img src="{% static 'images/logo.png' %}" alt="Pets Lives Matter">
+        </div>
         <div id = "header-banner-image">
           <img src="{% static 'images/header.jpg' %}" alt="Pet Lives Matter">
-          <div id="header-logo-image">
-            <img src="{% static 'images/logo.png' %}" alt="Pets Lives Matter">
-          </div>
         </div>
 </div>
         <div id="header-text" class="">
@@ -59,16 +62,24 @@
                     <div class="inner-wrap">
                         <hr>
                         <div>
-
+                          {% block content %}
+                          {% endblock %}
                               </div>
                         </div>
                     </div>
                 </div>
             </div>
             <footer id="colophon">
+              <div class="footer-nav">
+                <ul><a href="">Privacy Policy</a></ul>
+                <ul><a href="">Terms and Conditions</a></ul>
+                <ul><a href="">Copyright</a></ul>
+
+            </div>
                 <div class="inner-wrap">
-                    NZ At a Glance is a fictitious brand created by Computer Power Plus, solely for the purpose of training. All products and people associated with NZ At a Glance are also fictitious. Any resemblance to real brands, products, or people is purely coincidental.
+                    <ul id="contact-us-id"><a href="">Contact Us</a></ul>
                 </div>
+
             </footer>
         </div>
       </div>
