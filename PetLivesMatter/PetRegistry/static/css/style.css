@@ -1287,19 +1287,6 @@ body.wide {
 	max-width: 100%;
 	z-index: 2;
 }
-/* #header-banner-image img {
-	margin-bottom: 0px;
-	max-height: 60px;
-	height: auto;
-	width: auto;
-} */
-/* #header-logo-image {
-	position: relative;
-	left: 0;
-	top: 0;
-	display: none;
-	z-index: 1;
-} */
 #Header-logo-image img{
 	top: 45px;
 	margin-bottom: 0px;
@@ -1308,19 +1295,23 @@ body.wide {
 	width: auto;
 	position: absolute;
 	z-index: 1;
-
 }
-
 #header-text {
 	float: left;
-	padding-right: 20px;
+	padding: 0 60px 0px 370px;
+	position: absolute;
+	z-index: 1;
+
 }
 #site-title {
+	color: #666666;
+	font-size: 44px;
 	padding-bottom: 0;
+
 }
 #site-title a {
 	color: #666666;
-	font-size: 34px;
+	font-size: 44px;
 }
 #site-title a:hover {
 	color: #80abc8;
