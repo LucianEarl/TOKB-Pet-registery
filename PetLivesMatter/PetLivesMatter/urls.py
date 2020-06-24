@@ -15,12 +15,12 @@ urlpatterns = [
     # path('home/', home.site.urls),
 ]
 
-# # Have added url path to include petregistry urls - Tim
-# urlpatterns += [
-#     path('PetRegistry/', include('PetRegistry.urls')),
-#     #Added URL maps to redirect the base URL to our application - Tim
-#     path('', RedirectView.as_view(url='PetRegistry/', permanent=True)),
-# ]
-#
-# # Use static() to add url mapping to serve static files during development (only) - Tim
-# urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+# Have added url path to include petregistry urls - Tim
+urlpatterns += [
+    path('PetRegistry/', include('PetRegistry.urls')),
+    #Added URL maps to redirect the base URL to our application - Tim
+    path('', RedirectView.as_view(url='PetRegistry/', permanent=True)),
+]
+
+# Use static() to add url mapping to serve static files during development (only) - Tim
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
