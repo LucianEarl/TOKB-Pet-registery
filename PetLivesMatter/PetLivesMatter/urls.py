@@ -4,12 +4,7 @@ from django.urls import path
 from django.views.generic import RedirectView
 from django.conf import settings
 from django.conf.urls.static import static
-<<<<<<< HEAD
-from django.urls import path
-from . import views
-=======
 from PetRegistry import views
->>>>>>> 68b2931ad047d471e608dcb9d1598b196857e73e
 # from django.urls import include # Use include() to add URLS from the catalog application and authentication system
 
 
