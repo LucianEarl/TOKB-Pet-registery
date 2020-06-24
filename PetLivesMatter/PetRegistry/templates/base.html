@@ -10,20 +10,23 @@
 
 <header>
   <div class="header">
-                <div class="main-head-wrap inner-wrap clearfix">
-                  <img src="{% static 'images/header.jpg' %}" alt="Pet Lives Matter">
-                    <div id="header-logo-image">
-                      <img src="{% static 'images/logo.png' %}" alt="Pets Lives Matter">
+    <div class="main-head-wrap inner-wrap clearfix">
+      <div id="hero-image-div">
+        <div id = "header-banner-image">
+          <img src="{% static 'images/header.jpg' %}" alt="Pet Lives Matter">
+          <div id="header-logo-image">
+            <img src="{% static 'images/logo.png' %}" alt="Pets Lives Matter">
+          </div>
+        </div>
+</div>
+        <div id="header-text" class="">
+          <h1 id="site-title">
+            <a href="/" title="Pet Lives Matter" rel="home">Pets Lives Matter</a>
+          </h1>
+        </div>
 
-                    </div>
-                    <div id="header-text" class="">
-                        <h1 id="site-title">
-                            <a href="/" title="Pet Lives Matter" rel="home">Pets Lives Matter</a>
-                        </h1>
-                    </div>
-                </div>
-            </div>
-        </header>
+    </div>
+</header>
     </head>
     <body class="wide">
 
@@ -32,8 +35,7 @@
             <div class="col-sm-2">
               <ul class="sidebar-nav">
                 <br><br><br>
-                <li><a href="">Login</a></li>
-                <li><a href="">Register</a></li>
+                <li><a href="">Home</a></li>
                 <li><a href="">Missing Pets</a></li>
                 <li><a href="">About Us</a></li>
                 <li><a href="">Donate</a></li>
@@ -45,6 +47,8 @@
                 <li><a href="">Change Password</a></li>
               {% else %}
                 <li><a href="">Login</a></li>
+                <ul>or</ul>
+                <li><a href="">Register</a></li>
               {% endif %}
             </div>
 
