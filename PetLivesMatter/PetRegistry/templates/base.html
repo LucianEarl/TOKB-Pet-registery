@@ -8,18 +8,84 @@
     {% load static %}
     <link rel="stylesheet" id="ample-style-css" href="{% static 'style.css' %}" type="text/css" media="all">
     <header>
-      
-    </header>
+                <div class="header">
+                    <div class="main-head-wrap inner-wrap clearfix">
+                        <div id="header-logo-image">
+                          <img src="{% static 'images/header.jpg' %}" alt="Pet Lives Matter">
+                        </div>
+                        <div id="header-text" class="">
+                            <h1 id="site-title">
+                                <a href="/" title="Pet Lives Matter" rel="home">Pet Lives Matter</a>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
   </head>
-  <body>
-    <img src="{% static 'images/header.jpg' %}" alt="Pet Lives Matter">
-    <h1>PET LIVES MATTER</h1>
+  <body class="wide">
 
-    <div>
-      {% block content %}
-      {% endblock %}
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-sm-2">
+            {% block sidebar %}
+            <ul class="sidebar-nav">
+              <br><br><br>
+              <li><a href="">Login</a></li>
+              <li><a href="">Missing Pet</a></li>
+              <li><a href="">Register</a></li>
+              <li><a href="">About Us</a></li>
+              <li><a href="">Donate</a></li>
+            </ul>
+            {% if user.is_authenticated %}
+              <li>User: {{ user.get_username }}</li>
+              <li><a href="">Tour List</a></li>
+              <li><a href="">Logout</a></li
+              <li><a href="">Change Password</a></li>
+            {% else %}
+              <li><a href="">Login</a></li>
+            {% endif %}
+            {% endblock %}
+          </div>
+
+      <div id="page" class="hfeed site">
+
+          <div class="main-wrapper">
+              <div class="single-page clearfix">
+                  <div class="inner-wrap">
+                      <hr>
+                      <div>
+
+                        {% block content %}
+                        {% endblock %}
+                        {% block pagination %}
+                          {% if is_paginated %}
+                            <div class="pagination">
+                              <span class="page-links">
+                                {% if page_obj.has_previous %}
+                                  <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
+                                {% endif %}
+                                <span class="page-current">
+                                  Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                                </span>
+                                {% if page_obj.has_next %}
+                                  <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+                                {% endif %}
+                              </span>
+                            </div>
+                          {% endif %}
+                        {% endblock %}
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <footer id="colophon">
+              <div class="inner-wrap">
+                  NZ At a Glance is a fictitious brand created by Computer Power Plus, solely for the purpose of training. All products and people associated with NZ At a Glance are also fictitious. Any resemblance to real brands, products, or people is purely coincidental.
+              </div>
+          </footer>
+      </div>
     </div>
-
-
+  </div>
   </body>
 </html>
