@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
   <head>
     <meta charset="UTF-8">
@@ -7,8 +8,13 @@
   </head>
   <body>
 
-    <h1>This is a Heading</h1>
-    <p>This is a paragraph.</p>
+    <h1>Pet Lives Matter</h1>
+    <img src="{% static 'images/header.png' %}" alt="Pet Lives Matter">
+    <div>
+      {% block content %}
+      {% endblock %}
+    </div>
+
 
   </body>
 </html>
