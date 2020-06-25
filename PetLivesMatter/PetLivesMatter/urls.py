@@ -1,11 +1,32 @@
-
 from django.contrib import admin
 from django.urls import path
-from django.views.generic import RedirectView
-from django.conf import settings
-from django.conf.urls.static import static
+from django.conf.urls import url
+from django.urls import include
 from PetRegistry import views
-# from django.urls import include # Use include() to add URLS from the catalog application and authentication system
+from django.views.generic import RedirectView
+
+urlpatterns = [
+
+
+]
+
+# urlpatterns += [
+#     path('home/', include('home.urls')),
+# ]
+
+urlpatterns += [
+    path('', RedirectView.as_view(url='/home/')),
+]
+
+# urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+#Add Django site authentication urls (for login, logout, password management)
+
+# urlpatterns += [
+#     path('accounts/', include('django.contrib.auth.urls')),
+# ]
+
+# from django.urls import path
 
 
 urlpatterns = [
@@ -13,15 +34,4 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
     path('donate/', views.donate, name='donate'),
-    # path('home/', home.site.urls),
 ]
-
-# Have added url path to include petregistry urls - Tim
-urlpatterns += [
-    path('PetRegistry/', include('PetRegistry.urls')),
-    #Added URL maps to redirect the base URL to our application - Tim
-    path('', RedirectView.as_view(url='PetRegistry/', permanent=True)),
-]
-
-# Use static() to add url mapping to serve static files during development (only) - Tim
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
