@@ -48,7 +48,7 @@
                 <li><a href="">My Account</a></li>
                 <li><a href="">Logout</a></li>
               {% else %}
-                <li><a href="">Login</a></li>
+                <li><a href="{% url 'login' %}?next={{request.path}}">Login</a></li>
                 <ul>or</ul>
                 <li><a href="">Register</a></li>
               {% endif %}
