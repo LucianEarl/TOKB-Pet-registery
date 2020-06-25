@@ -5,14 +5,7 @@ from django.urls import include
 from PetRegistry import views
 from django.views.generic import RedirectView
 
-urlpatterns = [
 
-
-]
-
-# urlpatterns += [
-#     path('home/', include('home.urls')),
-# ]
 
 urlpatterns += [
     path('', RedirectView.as_view(url='/home/')),
