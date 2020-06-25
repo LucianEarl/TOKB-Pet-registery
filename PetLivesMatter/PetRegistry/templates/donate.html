@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+{% load static %}
   <div class = "about">
     <h2>Introduction</h2>
     <p>While this is a free service, we still have operating costs, so any money
@@ -13,7 +14,7 @@
   </div>
   <div class = "contact">
     <h2>Donate:</h2>
-      <a href="https://www.spca.nz/donate/donate-now"><img src="{% static 'images/SPCA_logo.jpg'}" alt="SPCA">
+      <a href="https://www.spca.nz/donate/donate-now"><img src="{% static 'images/SPCA_logo.png' %}"  alt="SPCA"></a>
   </div>
 
 

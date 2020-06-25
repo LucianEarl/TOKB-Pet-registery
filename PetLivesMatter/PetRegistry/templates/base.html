@@ -37,7 +37,7 @@
             <div class="col-sm-2">
               <ul class="sidebar-nav">
                 <br><br><br>
-                <li><a href="">Home</a></li>
+                <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="">Missing Pets</a></li>
                 <li><a href="{% url 'about' %}">About Us</a></li>
                 <li><a href="{% url 'donate' %}">Donate</a></li>
@@ -80,9 +80,9 @@
                     <ul class="contact-us-class">Email Address: info@PetLivesMatter.co.nz</ul>
                 </div>
             <div id="footer-logos">
-              <p><a href=""><img src="{% static 'images/AucklandCouncil_logo.jpg' %}" alt="Auckland Council"></a>
-              <a href=""><img src="{% static 'images/SPCA_logo.jpg' %}" alt="Pets Lives Matter"></a>
-              <a href=""><img src="{% static 'images/LocalCommunity_logo.jpg' %}" alt="Pets Lives Matter"></a></p>
+              <p><a href=""><img src="{% static 'images/AucklandCouncil_logo.png' %}" alt="Auckland Council"></a>
+              <a href=""><img src="{% static 'images/SPCA_logo.png' %}" alt="Pets Lives Matter"></a>
+              <a href=""><img src="{% static 'images/LocalCommunity_logo.png' %}" alt="Pets Lives Matter"></a></p>
             </div>
             </footer>
         </div>
