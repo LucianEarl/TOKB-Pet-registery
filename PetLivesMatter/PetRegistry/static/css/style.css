@@ -1709,13 +1709,17 @@ li.comment {
 
 }
 
-#contact-us-id a{
+.contact-us-class a{
 	font-size: 18 !important;
 	padding-right: 400px;
 
 }
 
+/* Logo footer styling */
 
+#footer-logos{
+	float: right;
+}
 
 /*
 ====> ====> 13.8.a Footer General CSS
