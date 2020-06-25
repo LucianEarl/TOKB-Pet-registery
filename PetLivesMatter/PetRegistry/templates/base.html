@@ -39,7 +39,7 @@
                 <br><br><br>
                 <li><a href="">Home</a></li>
                 <li><a href="">Missing Pets</a></li>
-                <li><a href="">About Us</a></li>
+                <li><a href="{% url 'about' %}">About Us</a></li>
                 <li><a href="">Donate</a></li>
               </ul>
               {% if user.is_authenticated %}
@@ -76,10 +76,11 @@
             </div>
                 <div class="inner-wrap">
                     <ul id="contact-us-id"><a href="">Contact Us</a></ul>
+                    <ul>Phone Number: Email Address:</ul>
                 </div>
             <div id="footer-logos">
               <ul><a href=""><img src="{% static 'images/AucklandCouncil_logo.png' %}" alt="Auckland Council"></a></ul>
-              <ul><a href=""><img src="{% static 'images/SPCA_logo.gif' %}" alt="Pets Lives Matter"></a></ul>
+              <ul><a href=""><img src="{% static 'images/SPCA_logo.jpg' %}" alt="Pets Lives Matter"></a></ul>
               <ul><a href=""><img src="{% static 'images/LocalCommunity_logo.jpg' %}" alt="Pets Lives Matter"></a></ul>
             </div>
             </footer>
