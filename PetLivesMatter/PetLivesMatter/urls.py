@@ -12,6 +12,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
+    path('donate/', views.donate, name='donate'),
     # path('home/', home.site.urls),
 ]
 
