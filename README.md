@@ -12,3 +12,8 @@ run a virtual environment with django installed
 use manage.py in the parent PetLivesMatter folder
 manage.py runserver
 then go to localhost:8000 while the server is open
+
+
+# User login password with their registered pets
+Andres Peltier - peltierA - Andres!45
+Halina Dabs = dabsHa - Halina@56
