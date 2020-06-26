@@ -15,5 +15,5 @@ then go to localhost:8000 while the server is open
 
 
 # User login password with their registered pets
-Andres Peltier - peltierA - Andres!45
+Andres Peltier = peltierA - Andres!45
 Halina Dabs = dabsHa - Halina@56
