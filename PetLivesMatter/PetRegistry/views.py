@@ -4,7 +4,8 @@ from django.http import HttpResponse
 from django.http import Http404
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
-from .forms import SignUpForm
+from .forms import SignUpForm, PetForm
+from .models import Pet
 
 
 
@@ -32,9 +33,10 @@ def signup_view(request):
 
 
 def pet_register_view(request):
-    form = PetForm(request.POST)
+    form = PetForm(request.POST or None)
     if form.is_valid():
         form.save()
+        return redirect('my_pets')
     #     username = form.cleaned_data.get('username')
     #     password = form.cleaned_data.get('password1')
     #     user = authenticate(username=username, password=password)
@@ -43,3 +45,7 @@ def pet_register_view(request):
     # else:
     #     form = SignUpForm()
     return render(request, 'pet_register.html', {'form': form})
+
+class PetListView(generic.ListView):
+    model = Pet
+    template_name = 'my_pets.html'

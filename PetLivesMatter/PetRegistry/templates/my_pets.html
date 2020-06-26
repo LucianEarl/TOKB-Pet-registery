@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+
+    <h2>My Pets:</h2>
+
+    {% for pet in pet_list %}
+      {% if pet.owner.get_username == user.get_username %}
+        {{pet.pet_name}}
+      {% endif %}
+    {% endfor %}
+    <h3><a href="{% url 'pet_register' %}">Register a pet</a></h3>
+  {% else %}
+    <p>Log in to see your pets!!!</p>
+{% endif %}
+{% endblock %}

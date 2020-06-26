@@ -51,9 +51,9 @@ class Pet(models.Model):
     SEX_CHOICES = (("F", "Female"),("M","Male"))
     COLOUR_CHOICES = (("Brown","Brown"),("Black","Black"),("White","White"),
     ("Orange","Orange"),("Green","Green"),("Yellow","Yellow"),("Blue","Blue"))
-    pet_name = models.CharField(max_length=150)
+    pet_name = models.CharField(max_length=30)
     species = models.CharField(max_length=20, choices=SPECIES_CHOICES)
-    age = models.IntegerField()
+    age = models.PositiveIntegerField()
     sex = models.CharField(max_length = 7, choices=SEX_CHOICES)
     colour = models.CharField(choices = COLOUR_CHOICES, max_length=10)
     eye_colour = models.CharField(choices = COLOUR_CHOICES, max_length=10)
