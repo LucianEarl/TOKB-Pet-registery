@@ -15,17 +15,6 @@ urlpatterns = [
     path('donate/', views.donate, name='donate'),
 ]
 
-<<<<<<< HEAD
-urlpatterns += [
-    path('', RedirectView.as_view(url='/home/')),
-    path('accounts/', include('django.contrib.auth.urls'))
-]
-
-
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-=======
->>>>>>> 768d0e086db9184e57729ef230e796b5651ba598
 #Add Django site authentication urls (for login, logout, password management)
 
 urlpatterns += [

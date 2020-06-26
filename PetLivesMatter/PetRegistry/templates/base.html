@@ -46,15 +46,9 @@
                 <li>User: {{ user.get_username }}</li>
                 <li><a href="">My Pets</a></li>
                 <li><a href="">My Account</a></li>
-<<<<<<< HEAD
-                <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
-              {% else %}
-                <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
-=======
                 <li><a href="{% url 'logout' %}?next={{request.path}}">Logout</a></li>
               {% else %}
                 <li><a href="{% url 'login' %}?next={{request.path}}">Login</a></li>
->>>>>>> 768d0e086db9184e57729ef230e796b5651ba598
                 <ul>or</ul>
                 <li><a href="">Register</a></li>
               {% endif %}
