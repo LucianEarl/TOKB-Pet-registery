@@ -6,6 +6,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from .forms import SignUpForm, PetForm
 from .models import Pet
+# from django.contrib.auth.models import User
 
 
 
@@ -35,17 +36,16 @@ def signup_view(request):
 def pet_register_view(request):
     form = PetForm(request.POST or None)
     if form.is_valid():
-        form.save()
+        pet = form.save(commit=False)
+        pet.owner =  request.user
+        pet.save()
         return redirect('my_pets')
-    #     username = form.cleaned_data.get('username')
-    #     password = form.cleaned_data.get('password1')
-    #     user = authenticate(username=username, password=password)
-    #     login(request, user)
-    #     return redirect('home')
-    # else:
-    #     form = SignUpForm()
     return render(request, 'pet_register.html', {'form': form})
 
-class PetListView(generic.ListView):
+class MyPetListView(generic.ListView):
     model = Pet
     template_name = 'my_pets.html'
+
+class PetDetailView(generic.DetailView):
+    model = Pet
+    template_name = 'pet_detail.html'

@@ -7,7 +7,16 @@
 
     {% for pet in pet_list %}
       {% if pet.owner.get_username == user.get_username %}
-        {{pet.pet_name}}
+        <div class="pet">
+          <a href="{% url 'pet_detail' pet.id %}">
+            <h3>{{pet.pet_name | capfirst}}</h3>
+          </a>
+          <p>{{pet.colour}} {{pet.species}}</p>
+          <hr>
+
+        </div>
+
+
       {% endif %}
     {% endfor %}
     <h3><a href="{% url 'pet_register' %}">Register a pet</a></h3>

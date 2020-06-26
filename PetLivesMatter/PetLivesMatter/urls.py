@@ -13,7 +13,8 @@ urlpatterns = [
     path('donate/', views.donate, name='donate'),
     path('signup/', views.signup_view, name="signup"),
     path('pet_register/', views.pet_register_view, name="pet_register"),
-    path('my_pets/', views.PetListView.as_view(), name="my_pets")
+    path('my_pets/', views.MyPetListView.as_view(), name="my_pets"),
+    path('pet/<int:pk>', views.PetDetailView.as_view(), name='pet_detail')
 ]
 
 

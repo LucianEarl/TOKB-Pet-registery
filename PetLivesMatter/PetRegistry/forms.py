@@ -15,7 +15,6 @@ class SignUpForm(UserCreationForm):
 
 
 class PetForm(forms.ModelForm):
-
     class Meta:
         model = Pet
-        fields = ('pet_name', 'species', 'age', 'sex', 'colour','eye_colour','markings','missing','owner')
+        fields = ('pet_name', 'species', 'age', 'sex', 'colour','eye_colour','markings','missing')

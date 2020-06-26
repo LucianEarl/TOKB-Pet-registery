@@ -48,7 +48,7 @@ class Pet(models.Model):
         ),
     )
 
-    SEX_CHOICES = (("F", "Female"),("M","Male"))
+    SEX_CHOICES = (("Female", "Female"),("Male","Male"))
     COLOUR_CHOICES = (("Brown","Brown"),("Black","Black"),("White","White"),
     ("Orange","Orange"),("Green","Green"),("Yellow","Yellow"),("Blue","Blue"))
     pet_name = models.CharField(max_length=30)
