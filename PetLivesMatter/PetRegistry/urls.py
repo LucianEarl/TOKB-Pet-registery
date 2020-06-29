@@ -5,13 +5,16 @@ from django.urls import include
 from PetRegistry import views
 from django.views.generic import RedirectView
 
+from PetRegistry.views import (
+    home_screen_view,
+)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-
 ]
 
 urlpatterns += [
-    path('home/', include('home.urls')),
+    path('', home_screen_view, name='home'),
 ]
 
 urlpatterns += [
@@ -24,5 +27,5 @@ urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urlpatterns += [
     path('accounts/', include('django.contrib.auth.urls')),
-    
+
 ]

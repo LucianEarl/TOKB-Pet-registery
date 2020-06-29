@@ -5,16 +5,23 @@ from django.urls import include
 from PetRegistry import views
 from django.views.generic import RedirectView
 
+from PetRegistry.views import (
+    home_screen_view,
+)
+
+from account.views import(
+    signup_view,
+)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-
-    path('', views.home, name='home'),
+    path('', home_screen_view, name='home'),
     path('about/', views.about, name='about'),
     path('donate/', views.donate, name='donate'),
-    path('signup/', views.signup_view, name="signup"),
     path('pet_register/', views.pet_register_view, name="pet_register"),
     path('my_pets/', views.MyPetListView.as_view(), name="my_pets"),
-    path('pet/<int:pk>', views.PetDetailView.as_view(), name='pet_detail')
+    path('pet/<int:pk>', views.PetDetailView.as_view(), name='pet_detail'),
+    path('signup/', signup_view, name='signup'),
 ]
 
 
@@ -22,4 +29,5 @@ urlpatterns = [
 
 urlpatterns += [
     path('accounts/', include('django.contrib.auth.urls')),
+
 ]

@@ -13,6 +13,9 @@ use manage.py in the parent PetLivesMatter folder
 manage.py runserver
 then go to localhost:8000 while the server is open
 
+# superuser login details
+Email: Admin@petslivesmatter.com
+Password: Michael74$
 
 # User login password with their registered pets
 Andres Peltier = peltierA - Andres!45
