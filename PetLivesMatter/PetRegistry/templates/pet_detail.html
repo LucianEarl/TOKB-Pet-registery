@@ -2,6 +2,7 @@
 {% block content %}
   {% if user.is_authenticated and user.get_username == pet.owner.get_username %}
     <div>
+      <img src="{{ pet.imagefile.url }}" />
       <h1>{{pet.pet_name|capfirst}} </h1>
       <br><br>
       <p><b>Species:</b> {{ pet.species}} </p>
