@@ -10,8 +10,10 @@ from PetRegistry.views import (
 )
 
 from account.views import(
-    signup_view,
+    signup_view, user_detail,
 )
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -20,6 +22,7 @@ urlpatterns = [
     path('donate/', views.donate, name='donate'),
     path('pet_register/', views.pet_register_view, name="pet_register"),
     path('my_pets/', views.MyPetListView.as_view(), name="my_pets"),
+    path('user_detail/', user_detail, name='user_detail'),
     path('pet/<int:pk>', views.PetDetailView.as_view(), name='pet_detail'),
     path('signup/', signup_view, name='signup'),
 ]

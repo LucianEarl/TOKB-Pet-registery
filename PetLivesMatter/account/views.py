@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from account.forms import SignUpForm
-
+from .models import Account
 
 def signup_view(request):
     context = {}
@@ -20,3 +20,10 @@ def signup_view(request):
         form = SignUpForm()
         context['signup_form'] = form
     return render(request, 'account/signup.html', context)
+
+
+def user_detail(request):
+    context = {}
+    accounts = Account.objects.all()
+    context['accounts'] = accounts
+    return render(request, 'account/user_detail.html', context)
