@@ -568,6 +568,19 @@ li.default-menu {
 /*--------------------------------------------------------------
 6.0 Images
 --------------------------------------------------------------*/
+.pet-detail-image {
+	max-height: 400px;
+	max-width: 400px;
+}
+
+.pet-list-image {
+	max-height: 200px;
+	max-width: 200px;
+	float: left;
+	margin-right: 10px;
+	border-style: none;
+}
+
 figure {
 	margin: 0;
 	text-align: center;

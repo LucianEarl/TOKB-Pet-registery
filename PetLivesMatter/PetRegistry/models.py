@@ -60,6 +60,7 @@ class Pet(models.Model):
     markings = models.CharField(max_length=250)
     missing = models.BooleanField()
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
+    imagefile= models.FileField(upload_to='images/', null=True, verbose_name="")
 
     def __str__(self):
-        return self.pet_name + ': ' + self.colour + ' ' + self.species
+        return self.pet_name + ': ' + str(self.imagefile) + self.colour + ' ' + self.species

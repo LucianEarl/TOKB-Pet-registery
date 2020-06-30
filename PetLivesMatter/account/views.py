@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from account.forms import SignUpForm
+from .models import Pet
 
 
 def signup_view(request):

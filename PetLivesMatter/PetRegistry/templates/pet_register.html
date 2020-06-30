@@ -4,19 +4,19 @@
   {% if user.is_authenticated %}
 
     <h2>Pet Regstration Form</h2>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
       {% csrf_token %}
       {% for field in form %}
-        <p>
+        <div>
           {{ field.label_tag }}<br>
           {{ field }}
           {% if field.help_text %}
             <small style="color: grey">{{ field.help_text }}</small>
           {% endif %}
           {% for error in field.errors %}
-            <p> style="color: red">{{ error }}</p>
+            <p style="color: red">{{ error }}</p>
           {% endfor %}
-        </p>
+        </div>
       {% endfor %}
       <button type="submit">Register Pet</button>
     </form>

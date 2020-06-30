@@ -6,10 +6,23 @@ from PetRegistry import views
 from django.views.generic import RedirectView
 
 from PetRegistry.views import (
-    home_screen_view,
-)
+    home_screen_view,)
+"""
+Examples:
+Function views
+    1. Add an import: from my_app import views
+    2. Add a URL to urlpatterns: path('', views.home, name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, Path
+    2. Add a URL to urlpatterns: path('blog/', Include('blog.urls'))
+"""
 
 urlpatterns = [
+""" File Path PetRegistry #
+"""
+    path('<SPECIES_CHOICES:pk>', views.pet_detail, name='detail'),
+"""
+"""
     path('admin/', admin.site.urls),
 ]
 

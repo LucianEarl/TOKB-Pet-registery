@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
 from django.http import HttpResponse
 from django.http import Http404
@@ -9,7 +9,13 @@ from .models import Pet
 from account.models import Account
 # from django.contrib.auth.models import User
 
-
+"""
+"""
+def pet_detail(request, pk):
+    Pet = get_object_or_404(Pet, pk=pk)
+    return render(request, 'Pet_detail.html', ['pet': Pet])
+"""
+"""
 
 def home_screen_view(request):
     context = {}
