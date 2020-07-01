@@ -9,6 +9,7 @@ from django.conf.urls.static import static
 
 from PetRegistry.views import (
     home_screen_view,
+    pet_detail_view
 )
 
 from account.views import(
@@ -25,8 +26,11 @@ urlpatterns = [
     path('pet_register/', views.pet_register_view, name="pet_register"),
     path('my_pets/', views.MyPetListView.as_view(), name="my_pets"),
     path('user_detail/', user_detail, name='user_detail'),
-    path('pet/<int:pk>', views.PetDetailView.as_view(), name='pet_detail'),
+    path('pet/<int:pk>', pet_detail_view, name='pet_detail'),
+    # path('pet/<int:pk>', views.PetDetailView.as_view(), name='pet_detail'),
     path('signup/', signup_view, name='signup'),
+    path('missing_pets/', views.MissingPetsView.as_view(), name="missing_pets"),
+    # path('missing_pets', missing_pet_view, name='missing_pets'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
