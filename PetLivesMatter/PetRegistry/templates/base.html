@@ -2,7 +2,6 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home | Pet Lives Matter</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
@@ -32,77 +31,7 @@
       </div>
     </div>
 </header>
-
-<style>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-
-li {
-  float: left;
-}
-
-li a, .dropbtn {
-  display:  inline-block;
-  color: white;
-  text-align: left;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
-}
-
-li.dropdown {
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1;}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-</style>
     </head>
-
-    <ul>
-
-        <div class="dropdown-content">
-          <a href="{% url 'home' %}">Home</a>
-          <a href="">Missing Pets</a>
-          <a href="{% url 'about' %}">About Us</a>
-          <a href="{% url 'donate' %}">Donate</a>
-          <a href="{% url 'my_pets' %}">My Pets</a>
-          <a href="{% url 'user_detail' %}">My Account</a>
-          <a href="{% url 'logout'%}?next={{request.path}}">Logout</a>
-          <a href="{% url 'login'%}?next={{request.path}}">Login</a>
-          <a href="{% url 'signup'%}?next={{request.path}}">Register</a>
-        </div>
-      </li>
-    </ul>
-
     <body class="wide">
 
       <div class="container-fluid">
@@ -111,7 +40,7 @@ li.dropdown {
               <ul class="sidebar-nav">
                 <br><br><br>
                 <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'missing_pets' %}">Missing Pets</a></li>
+                <li><a href="">Missing Pets</a></li>
                 <li><a href="{% url 'about' %}">About Us</a></li>
                 <li><a href="{% url 'donate' %}">Donate</a></li>
               </ul>
@@ -159,6 +88,5 @@ li.dropdown {
             </footer>
         </div>
       </div>
-
     </body>
 </html>
