@@ -576,6 +576,8 @@ li.default-menu {
 .pet-list-image {
 	max-height: 200px;
 	max-width: 200px;
+	min-width: 200px;
+	min-height: 200px;
 	float: left;
 	margin-right: 10px;
 	border-style: none;

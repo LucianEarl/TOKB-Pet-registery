@@ -13,6 +13,9 @@ use manage.py in the parent PetLivesMatter folder
 manage.py runserver
 then go to localhost:8000 while the server is open
 
+please install the below in virtual environment
+pip install django-filter
+
 # superuser login details
 Email: Admin@petslivesmatter.com
 Password: Michael74$
