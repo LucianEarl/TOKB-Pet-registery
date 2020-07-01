@@ -58,7 +58,7 @@ class Pet(models.Model):
     colour = models.CharField(choices = COLOUR_CHOICES, max_length=10)
     eye_colour = models.CharField(choices = COLOUR_CHOICES, max_length=10)
     markings = models.CharField(max_length=250)
-    missing = models.BooleanField()
+    missing = models.BooleanField(default = False)
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
     imagefile= models.FileField(upload_to='images/', null=True, verbose_name="")
 
