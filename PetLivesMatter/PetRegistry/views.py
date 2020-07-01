@@ -4,7 +4,11 @@ from django.http import HttpResponse
 from django.http import Http404
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
+<<<<<<< HEAD
 from .forms import PetForm # FilterForm
+=======
+from .forms import PetForm, MissingPetForm
+>>>>>>> b9ec8a9037dfba4d8a02243fa764f04ae65827e7
 from .models import Pet
 from account.models import Account
 # from .models import Image
@@ -76,13 +80,11 @@ def donate(request):
 
 def pet_register_view(request):
     lastimage= Pet.objects.last()
-
     imagefile= lastimage.imagefile
-
     form = PetForm(request.POST or None, request.FILES or None)
     if form.is_valid():
         pet = form.save(commit=False)
-        pet.owner =  request.user
+        pet.owner = request.user
         pet.save()
         return redirect('my_pets')
     return render(request, 'pet_register.html', {'imagefile': imagefile, 'form': form})
@@ -95,6 +97,18 @@ class MyPetListView(generic.ListView):
     model = Pet
     template_name = 'my_pets.html'
 
-class PetDetailView(generic.DetailView):
-    model = Pet
-    template_name = 'pet_detail.html'
+def pet_detail_view(request, pk):
+    try:
+        pet = Pet.objects.get(id = pk)
+        # missing_status = pet.missing
+        if pet.missing == True:
+            form = MissingPetForm(request.POST or None, initial = {'Pet_missing' : 'True'})
+        else:
+            form = MissingPetForm(request.POST or None, initial = {'Pet_missing' : 'False'})
+        # if form.is_valid():
+        #     if pet.
+
+    except Pet.DoesNotExist:
+        raise Http404('pet not found')
+
+    return render(request, 'pet_detail.html', {'pet': pet, 'form': form})

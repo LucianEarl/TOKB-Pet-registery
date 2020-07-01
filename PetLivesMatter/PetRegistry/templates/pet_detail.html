@@ -11,6 +11,17 @@
       <p><b>Sex:</b> {{ pet.sex}} </p>
       <p><b>Eye Colour:</b> {{ pet.eye_colour}} </p>
       <p><b>Markings:</b> {{ pet.markings}} </p>
+      {% if pet.missing == True %}
+        <p><b>Missing:</b> YES </p>
+      {% else %}
+        <p><b>Missing:</b> NO </p>
+      {% endif %}
+
+      <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Change Missing Status</button>
+      </form>
       <br>
     </div>
   {% else %}
