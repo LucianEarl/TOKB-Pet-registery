@@ -4,11 +4,7 @@ from django.http import HttpResponse
 from django.http import Http404
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
-<<<<<<< HEAD
-from .forms import PetForm # FilterForm
-=======
 from .forms import PetForm, MissingPetForm
->>>>>>> b9ec8a9037dfba4d8a02243fa764f04ae65827e7
 from .models import Pet
 from account.models import Account
 # from .models import Image
