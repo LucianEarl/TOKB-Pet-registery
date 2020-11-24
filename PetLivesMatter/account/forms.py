@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from account.models import Account
 
-
 class SignUpForm(UserCreationForm):
     username = forms.CharField(max_length=30, help_text='Required. Please put in your username.')
     first_name = forms.CharField(max_length=30, help_text='Required. Please put in your first name.')

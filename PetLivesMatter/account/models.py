@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
+# custom user manager used to create new superuser and user
 class MyAccountManager(BaseUserManager):
     def create_user(self, email, username, first_name, last_name, physical_address, phone_number, password=None):
         if not email:
@@ -45,7 +46,7 @@ class MyAccountManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-
+# account models for superuser and basic user
 class Account(AbstractBaseUser):
     email = models.EmailField(verbose_name="email", max_length=60, unique=True)
     username = models.CharField(max_length=30, unique=True)
