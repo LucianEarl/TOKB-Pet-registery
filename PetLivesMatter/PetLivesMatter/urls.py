@@ -16,7 +16,7 @@ from account.views import(
     signup_view, user_detail,
 )
 
-
+# clean up unnecessary comments and old code
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,10 +27,8 @@ urlpatterns = [
     path('my_pets/', views.MyPetListView.as_view(), name="my_pets"),
     path('user_detail/', user_detail, name='user_detail'),
     path('pet/<int:pk>', pet_detail_view, name='pet_detail'),
-    # path('pet/<int:pk>', views.PetDetailView.as_view(), name='pet_detail'),
     path('signup/', signup_view, name='signup'),
     path('missing_pets/', views.MissingPetsView.as_view(), name="missing_pets"),
-    # path('missing_pets', missing_pet_view, name='missing_pets'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
