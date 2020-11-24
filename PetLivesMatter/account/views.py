@@ -3,6 +3,7 @@ from django.contrib.auth import login, authenticate
 from account.forms import SignUpForm
 from .models import Account
 
+# view for sign up page and function to db
 def signup_view(request):
     context = {}
     if request.POST:
